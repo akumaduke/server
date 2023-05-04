@@ -38,6 +38,60 @@ app.post('/messages', function(req, res) {
   }
 });
 
+//templates
+smooch.templates.create({
+  appId: 'app_6453d17f6f359d7b427a3fcc',
+  props: {
+      name: 'lead_capture',
+      message: {
+          type: 'form',
+          role: 'appMaker',
+          fields: [
+              {
+                  type: 'email',
+                  name: 'email',
+                  label: 'Email',
+                  placeholder: ''
+              },
+              {
+                  type: 'text',
+                  name: 'company-website',
+                  label: 'Company website',
+                  placeholder: ''
+              },
+              {
+                  type: 'select',
+                  name: 'company-size',
+                  label: 'Company size',
+                  placeholder: 'Choose a number...',
+                  options: [
+                      {
+                          name: '1-10',
+                          label: '1-10 employees'
+                      },
+                      {
+                          name: '11-50',
+                          label: '11-50 employees'
+                      },
+                      {
+                          name: '51-250',
+                          label: '51-250 employees'
+                      },
+                      {
+                          name: '251-1000',
+                          label: '251-1000 employees'
+                      },
+                      {
+                          name: '1001+',
+                          label: '1001+ employees'
+                      }
+                  ]
+              }
+          ]
+      }
+  }
+});
+
 // Listen on port
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
@@ -46,7 +100,7 @@ app.listen(PORT, () => {
 async function sendMessage(appId, conversationId){
     let messagePost = new SunshineConversationsApi.MessagePost();  
     messagePost.setAuthor({type: 'business'});
-    messagePost.setContent({type: 'text', text: 'Live long and prosper'});
+    messagePost.setContent((lead_capture));
     let response = await apiInstance.postMessage(appId, conversationId, messagePost);
     console.log('API RESPONSE:\n', response);
 }
