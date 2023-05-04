@@ -56,7 +56,7 @@ app.post('/messages', function(req, res) {
 smooch.templates.create({
   appId: 'app_6453d17f6f359d7b427a3fcc',
   props: {
-      name: 'lead_capture',
+      name: 'leads_capture',
       message: {
           type: 'form',
           role: 'appMaker',
@@ -114,7 +114,7 @@ app.listen(PORT, () => {
 async function sendMessage(appId, conversationId){
     let messagePost = new SunshineConversationsApi.MessagePost();  
     messagePost.setAuthor({type: 'business'});
-    messagePost.setContent((lead_capture));
+    messagePost.setContent({type: 'text', text: 'Live long and prosper %{{template: leads_capture}}%'});
     let response = await apiInstance.postMessage(appId, conversationId, messagePost);
     console.log('API RESPONSE:\n', response);
 }
