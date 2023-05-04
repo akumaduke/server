@@ -6,6 +6,12 @@ const bodyParser = require('body-parser');
 const SunshineConversationsApi = require('sunshine-conversations-client');
 
 
+const smooch = new SmoochCore({
+  keyId: 'app_6453d17f6f359d7b427a3fcc',
+  secret: '44qv6-2pyHBNNKCHbSk5lLC9KrBwMyxQE4WP-HQs017SPZnONIvALZIOvEziTRByybE3hgYwKGenBua4bvrP7g',
+  scope: 'app' // account or app
+});
+
 // Config
 let defaultClient = SunshineConversationsApi.ApiClient.instance;
 let basicAuth = defaultClient.authentications['basicAuth'];
