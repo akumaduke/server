@@ -21,7 +21,8 @@ const apiInstance = new SunshineConversationsApi.MessagesApi()
 const smooch = new SmoochCore({
   keyId: 'app_6453d17f6f359d7b427a3fcc',
   secret: '44qv6-2pyHBNNKCHbSk5lLC9KrBwMyxQE4WP-HQs017SPZnONIvALZIOvEziTRByybE3hgYwKGenBua4bvrP7g',
-  scope: 'app' // account or app
+  scope: 'app' ,
+  serviceUrl: 'https://api.smooch.io'// account or app
 });
 
 // Server https://expressjs.com/en/guide/routing.html
