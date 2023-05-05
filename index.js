@@ -63,7 +63,7 @@ app.listen(PORT, () => {
 async function sendMessage(appId, conversationId){
     let messagePost = new SunshineConversationsApi.MessagePost();  
     messagePost.setAuthor({type: 'business'});
-    messagePost.setContent({type: 'text', text: 'Live long and prosper. %((template: smooch_tmpl_things_to_do))%'});
+    messagePost.setContent({type: 'text', text: 'Bonjour et Bienvenue. %((template: smooch_tmpl_things_to_do))%'});
     let response = await apiInstance.postMessage(appId, conversationId, messagePost);
     console.log('API RESPONSE:\n', response);
 }
